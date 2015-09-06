@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Char Grouper</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<script src="script/controller.js"></script>
+<style>
+.error{
+color:red}
+.container{
+position:absolute;
+top:15%;
+left:10%;
+}
+.leftpadding5{
+padding-left:30px;
+}
+</style>
+</head>
+
+<body>
+<div ng-app="myApp" ng-controller="taskCtrl" class="container">
+<div  ng-form name="taskForm" class="form-inline">
+
+<h5>Enter Input: <input type="text" id="textInput" name="textInput" ng-model="input" required class="form-control"></h5>
+<div ng-show="taskForm.textInput.$error.required" class="text-danger">Empty Input</div>
+
+<br>
+<button class="btn btn-primary" id="clickbtn" name="clickbtn" ng-click="convertChar()">Compress</button>
+<button class="btn btn-primary" id="resetbtn" name="resetbtn" ng-click="reset()">Reset</button>
+
+<br>
+<div ng-class="status" id="statusmessage"><strong id="code">{{outputStatus}}</strong><span class="leftpadding5" id="output">{{output}}</span></div>
+
+</div>
+</div>
+
+</body>
+</html>

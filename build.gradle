@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.1.12.RELEASE'
+
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+defaultTasks 'clean', 'eclipse','build'
+test {
+  include 'com/spring/task/chargroup/service/unit/**'
+  exclude 'com/spring/task/chargroup/service/integration/**'
+}
+repositories {
+   mavenCentral()
+   maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+}
+dependencies {
+compile 'org.springframework:spring-webmvc:3.0.5.RELEASE'
+
+	 compile 'org.springframework.boot:spring-boot-starter-web:1.2.5.RELEASE'
+	 	compile ('com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.2')
+	 
+	compile 'org.apache.commons:commons-lang3:3.4'
+
+testCompile 'junit:junit:4.11'
+testCompile 'org.powermock:powermock-module-junit4:1.5.1'
+	testCompile 'org.powermock:powermock-api-mockito:1.5.1'
+	testCompile 'org.springframework:spring-test:4.1.4.RELEASE'
+	testCompile 'org.seleniumhq.selenium:selenium-server:2.47.1'
+testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.47.1'
+
+}
+    
