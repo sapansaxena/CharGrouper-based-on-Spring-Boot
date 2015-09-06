@@ -1,5 +1,8 @@
 #Spring Boot based CharGrouper implementation.
 
+Access web app using http://localhost:8080 with default configuration. 
+Configuration of server address/port can be changed via application,properties
+
 This is a sample application based on Spring Boot application. 
 This is a gradle based project. For usage and execution, run "gradle build"  and "gradle bootRun"  to execute all the compile steps and Junit tests execution, and Spring uses embedded tools to deploy a web app on the server address and port provided in application.properties.
 The build also generates a jar file, and you may skip "gradle bootRun"  step. The jar file can be executed normally via "java -jar CharGroup.jar"  command and the web app will be deployed.
